@@ -319,6 +319,15 @@ text-align: center;
     <img src="http://mt.google.com/vt/icon/name=icons/spotlight/ad_tier1_L_8x.png&scale=1">
     <br>
     <img src="http://mt.google.com/vt/icon/name=icons/layers/indoor/toilet.png&scale=1">
+	<script>
+    imgs = document.getElementsByTagName('img');
+    for(i=0; i<imgs.length; i++) {
+        document.getElementsByTagName('img')[i].addEventListener('click',openImg, false);
+    }
+	function openImg(){
+	location.href = this.src;	
+	}	
+    </script>
 </body>
 
 </html>
