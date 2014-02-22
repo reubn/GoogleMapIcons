@@ -5,7 +5,8 @@
 <style>
 body{
 text-align: center;    
-}</style>
+}
+</style>
 </head>
 
 <body>
@@ -293,9 +294,7 @@ text-align: center;
     <img src="http://mt.google.com/vt/icon/name=icons/spotlight/transit/metro_large.png&scale=1">
 	<img src="http://mt.google.com/vt/icon/name=icons/spotlight/transit/funicular_large.png&scale=1">
 	<img src="http://mt.google.com/vt/icon/name=icons/spotlight/transit/tram_large.png&scale=1">
-	
-	
-    <br>
+	<br>
     <img src="http://mt.google.com/vt/icon/name=icons/transit/localizations/uk-rail_large.png&scale=1">
     <img src="http://mt.google.com/vt/icon/name=icons/transit/localizations/uk-london-overground_large.png&scale=1">
     <img src="http://mt.google.com/vt/icon/name=icons/transit/localizations/uk-london-metro_large.png&scale=1">
@@ -323,10 +322,24 @@ text-align: center;
     imgs = document.getElementsByTagName('img');
     for(i=0; i<imgs.length; i++) {
         document.getElementsByTagName('img')[i].addEventListener('click',openImg, false);
-    }
+		document.getElementsByTagName('img')[i].addEventListener("mouseover", func, false);
+		document.getElementsByTagName('img')[i].addEventListener("mouseout", func1, false);
 	function openImg(){
 	location.href = this.src;	
 	}	
+	
+	function func()
+{  
+	pre = this.src.replace("&scale=1", "&scale=2");
+	this.setAttribute("src", pre);
+}
+
+function func1()
+{  
+   pre = this.src.replace("&scale=2","&scale=1");
+	this.setAttribute("src", pre);
+}
+    }
     </script>
 </body>
 
